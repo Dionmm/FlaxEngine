@@ -1,5 +1,5 @@
 name: Build Linux
-on: [push, pull_request]
+on: [push, pull_request, workflow_dispatch]
 
 env:
   DOTNET_NOLOGO: true
@@ -10,7 +10,7 @@ jobs:
   # Editor
   editor-linux:
     name: Editor (Linux, Development x64)
-    runs-on: "ubuntu-24.04"
+    runs-on: self-hosted
     steps:
     - name: Checkout repo
       uses: actions/checkout@v3
